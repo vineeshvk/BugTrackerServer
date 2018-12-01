@@ -1,0 +1,53 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add -D @types/typeorm
+
+PATH: 
+  /home/vineesh/bin:/home/vineesh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/vineesh/Android/Sdk/tools:/home/vineesh/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  8.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2ftypeorm: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:65894:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:129018:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:129990:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:129912:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+     "name": "BugTrackerServer",
+     "version": "0.0.1",
+     "description": "Awesome project developed with TypeORM.",
+     "devDependencies": {
+        "ts-node": "3.3.0",
+        "@types/node": "^8.0.29",
+        "typescript": "2.5.2"
+     },
+     "dependencies": {
+        "typeorm": "0.2.8",
+        "reflect-metadata": "^0.1.10",
+        "pg": "^7.3.0"
+     },
+     "scripts": {
+        "start": "ts-node src/index.ts"
+     }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
