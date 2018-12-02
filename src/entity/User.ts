@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import {
+	Entity,
+	PrimaryGeneratedColumn,
+	Column,
+	BaseEntity,
+	OneToMany
+} from 'typeorm';
+import { Bug } from './Bug';
 
 @Entity()
 export class User extends BaseEntity {
@@ -13,4 +20,7 @@ export class User extends BaseEntity {
 
 	@Column()
 	admin: boolean;
+
+	@OneToMany(type => Bug, bug => bug.assignedTo)
+	bugs: Bug[];
 }

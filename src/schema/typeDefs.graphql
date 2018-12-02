@@ -1,13 +1,34 @@
 type Query {
 	test(name: String): String
+	viewBugs(userId: String!): [Bug]
 }
 
 type Mutation {
 	login(email: String!, password: String!): UserData
-	register(email: String!, password: String!, admin:Boolean): UserData
+	register(email: String!, password: String!, admin: Boolean): UserData
+	addBug(
+		adminId: String!
+		assignEmail: String
+		title: String!
+		description: String
+	): Boolean
 }
 
 type UserData {
 	id: String
 	admin: Boolean
+}
+
+type Bug {
+	id: String
+	title: String
+	description: String
+	resolved: String
+	assignedTo: User
+}
+
+type User {
+	id: String
+	email: String
+	admin: String
 }
