@@ -1,6 +1,7 @@
 type Query {
 	test(name: String): String
 	viewBugs(userId: String!): [Bug]
+	allUsers(userId: String!): [User]
 }
 
 type Mutation {

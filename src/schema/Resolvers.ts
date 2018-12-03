@@ -7,7 +7,8 @@ import { getRepository } from 'typeorm';
 const resolvers: IResolvers = {
 	Query: {
 		test,
-		viewBugs
+		viewBugs,
+		allUsers
 	},
 	Mutation: {
 		register,
@@ -31,6 +32,16 @@ async function viewBugs(_, { userId }) {
 	console.log('from bug repo', bugs);
 
 	return bugs;
+}
+
+/* ---------------ALL USERS----------------- */
+async function allUsers(_, { userId }) {
+	const userExist = await checkUserExists({ id: userId });
+	if (!userExist) return null;
+
+	const users = await User.find();
+
+	return users;
 }
 
 //Mutation
