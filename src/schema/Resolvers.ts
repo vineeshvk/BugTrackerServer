@@ -13,7 +13,8 @@ const resolvers: IResolvers = {
 	Mutation: {
 		register,
 		login,
-		addBug
+		addBug,
+		changeStatus
 	}
 };
 
@@ -29,7 +30,6 @@ async function viewBugs(_, { userId }) {
 
 	const bugRepo = getRepository(Bug);
 	const bugs = await bugRepo.find({ relations: ['assignedTo'] });
-	console.log('from bug repo', bugs);
 
 	return bugs;
 }
@@ -74,8 +74,8 @@ async function login(_, { email, password }) {
 	return { id: userExist.id, admin: userExist.admin };
 }
 
-const checkUserExists = async (email: { id?: string; email?: string }) => {
-	const userExist = await User.findOne(email);
+const checkUserExists = async (value: { id?: string; email?: string }) => {
+	const userExist = await User.findOne(value);
 	return userExist;
 };
 
@@ -100,5 +100,32 @@ const createBug = async (
 	await newBug.save();
 	return true;
 };
+
+/* -----------ADD BUG------------- */
+async function changeStatus(_, { userId, bugId, status }) {
+	if (status !== 'closed' && status !== 'unresolved' && status !== 'resolved')
+		return false;
+
+	const user = await checkUserExists({ id: userId });
+	const bugRepo = getRepository(Bug);
+	const bugs = await bugRepo.find({ relations: ['assignedTo'] });
+	const bug = bugs.filter(bug => bug.id === bugId)[0];
+
+	if (user.admin === true) {
+		bug.status = status;
+		await bug.save();
+		return true;
+	}
+
+	console.log(bug.assignedTo.id === user.id, bug.assignedTo, user);
+
+	if (bug.assignedTo.id === user.id && status !== 'closed') {
+		bug.status = status;
+		await bug.save();
+		return true;
+	}
+
+	return false;
+}
 
 export default resolvers;

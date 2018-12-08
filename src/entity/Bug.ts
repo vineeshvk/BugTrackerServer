@@ -18,8 +18,8 @@ export class Bug extends BaseEntity {
 	@Column()
 	description: string;
 
-	@Column({ default: false })
-	resolved: boolean;
+	@Column({ default: 'unresolved' })
+	status: 'unresolved' | 'resolved' | 'closed';
 
 	@ManyToOne(type => User, user => user.bugs)
 	assignedTo: User;

@@ -13,6 +13,7 @@ type Mutation {
 		title: String!
 		description: String
 	): Boolean
+	changeStatus(bugId:String!,userId:String!,status:String!):Boolean
 }
 
 type UserData {
@@ -24,7 +25,7 @@ type Bug {
 	id: String
 	title: String
 	description: String
-	resolved: String
+	status:String!
 	assignedTo: User
 }
 
