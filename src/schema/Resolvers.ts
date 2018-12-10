@@ -112,12 +112,10 @@ async function changeStatus(_, { userId, bugId, status }) {
 	const bug = bugs.filter(bug => bug.id === bugId)[0];
 
 	if (user.admin === true) {
-		bug.status = status;
+		bug.remove();
 		await bug.save();
 		return true;
 	}
-
-	console.log(bug.assignedTo.id === user.id, bug.assignedTo, user);
 
 	if (bug.assignedTo.id === user.id && status !== 'closed') {
 		bug.status = status;

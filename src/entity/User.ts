@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { Bug } from './Bug';
 
-@Entity()
+@Entity('users')
 export class User extends BaseEntity {
 	@PrimaryGeneratedColumn('uuid')
 	id: string;
