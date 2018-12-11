@@ -1,7 +1,26 @@
-# Awesome Project Build with TypeORM
-        
-Steps to run this project:
+# BugTracker Server
 
-1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+It's is an Apollo Graphql Server created using typescript which uses postgres as it's database.
+
+## Android App
+
+[Bug tracker Android App]() is an android app which uses this server as backend.
+
+### Libraries used
+
+- [Apollo-server](https://www.apollographql.com/docs/apollo-server/)
+- [Typeorm](http://typeorm.io/#/)
+
+### Requirements
+
+- nodeJs
+- postgres (with a database names BugTracker )
+
+### How to run
+
+```
+npm start
+```
+
+in the project directory.
+then open **http://localhost:4000** in your web browser
