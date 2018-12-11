@@ -6,6 +6,14 @@ It's is an Apollo Graphql Server created using typescript which uses postgres as
 
 [Bug tracker Android App]() is an android app which uses this server as backend.
 
+### Features
+
+- create user(admin or normal)
+- login
+- create bug and assign
+- view bugs
+- change status of bugs
+
 ### Libraries used
 
 - [Apollo-server](https://www.apollographql.com/docs/apollo-server/)
