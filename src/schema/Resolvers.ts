@@ -113,7 +113,7 @@ async function changeStatus(_, { userId, bugId, status }) {
 
 	if (user.admin === true) {
 		await bug.remove();
-		await bug.save();
+		// await bug.save();
 		return true;
 	}
 
