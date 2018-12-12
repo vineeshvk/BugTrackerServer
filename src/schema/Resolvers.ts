@@ -101,7 +101,7 @@ const createBug = async (
 	return true;
 };
 
-/* -----------ADD BUG------------- */
+/* -----------CHANGE STATUS------------- */
 async function changeStatus(_, { userId, bugId, status }) {
 	if (status !== 'closed' && status !== 'unresolved' && status !== 'resolved')
 		return false;
@@ -112,7 +112,7 @@ async function changeStatus(_, { userId, bugId, status }) {
 	const bug = bugs.filter(bug => bug.id === bugId)[0];
 
 	if (user.admin === true) {
-		bug.remove();
+		await bug.remove();
 		await bug.save();
 		return true;
 	}
