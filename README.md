@@ -27,8 +27,24 @@ and is deployed in heroku at http://bugtracker-server.herokuapp.com using docker
 
 ### How to run
 
+#### Normal
+
+you have to run your postgres server at PORT 5432 then
+
+```
+npm install
+```
+
 ```
 npm start
+```
+
+#### With Docker
+
+first install [docker](https://docs.docker.com/install/#supported-platforms) and [docker-compose](https://docs.docker.com/compose/install/#install-compose)
+
+```
+docker-compose up
 ```
 
 in the project directory.
