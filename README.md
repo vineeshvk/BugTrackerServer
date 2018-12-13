@@ -5,7 +5,7 @@ and is deployed in heroku at http://bugtracker-server.herokuapp.com using docker
 
 ## Android App
 
-[Bug tracker Android App]() is an android app which uses this server as backend.
+[Bug tracker Android App](https://github.com/ThalapathySiva/BugTracker) is an android app which uses this server as backend.
 
 ### Features
 
