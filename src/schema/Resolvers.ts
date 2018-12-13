@@ -1,8 +1,8 @@
-import { compare, hash } from 'bcrypt';
 import { IResolvers } from 'graphql-tools';
 import { Bug } from '../entity/Bug';
 import { User } from '../entity/User';
 import { getRepository } from 'typeorm';
+import { hash, compare } from 'bcryptjs';
 
 const resolvers: IResolvers = {
 	Query: {

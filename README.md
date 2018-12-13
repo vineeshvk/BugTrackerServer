@@ -1,6 +1,7 @@
 # BugTracker Server
 
 It's is an Apollo Graphql Server created using typescript which uses postgres as it's database.
+and is deployed in heroku at http://bugtracker-server.herokuapp.com using docker container.
 
 ## Android App
 

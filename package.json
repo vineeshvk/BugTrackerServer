@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"description": "Awesome project developed with TypeORM.",
 	"devDependencies": {
-		"@types/bcrypt": "^3.0.0",
+		"@types/bcryptjs": "^2.4.2",
 		"@types/graphql": "^14.0.3",
 		"@types/node": "^8.0.29",
 		"ts-node": "3.3.0",
@@ -11,12 +11,11 @@
 	},
 	"dependencies": {
 		"apollo-server": "^2.2.5",
-		"bcrypt": "^3.0.2",
+		"bcryptjs": "^2.4.3",
 		"graphql": "^14.0.2",
 		"graphql-import": "^0.7.1",
 		"graphql-tools": "^4.0.3",
 		"pg": "^7.3.0",
-		"reflect-metadata": "^0.1.10",
 		"typeorm": "0.2.8"
 	},
 	"scripts": {
