@@ -29,7 +29,12 @@ async function viewBugs(_, { userId }) {
 	if (!userExist) return null;
 
 	const bugRepo = getRepository(Bug);
-	const bugs = await bugRepo.find({ relations: ['assignedTo'] });
+	const bugs = await bugRepo.find({
+		relations: ['assignedTo'],
+		order: {
+			date: 'DESC'
+		}
+	});
 
 	return bugs;
 }
@@ -111,13 +116,12 @@ async function changeStatus(_, { userId, bugId, status }) {
 	const bugs = await bugRepo.find({ relations: ['assignedTo'] });
 	const bug = bugs.filter(bug => bug.id === bugId)[0];
 
-	if (user.admin === true) {
+	if (user.admin === true && status === 'closed') {
 		await bug.remove();
-		// await bug.save();
 		return true;
 	}
 
-	if (bug.assignedTo.id === user.id && status !== 'closed') {
+	if ((bug.assignedTo.id === user.id && status !== 'closed') || user.admin) {
 		bug.status = status;
 		await bug.save();
 		return true;

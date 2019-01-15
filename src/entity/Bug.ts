@@ -3,7 +3,8 @@ import {
 	PrimaryGeneratedColumn,
 	Column,
 	BaseEntity,
-	ManyToOne
+	ManyToOne,
+	CreateDateColumn
 } from 'typeorm';
 import { User } from './User';
 
@@ -23,4 +24,7 @@ export class Bug extends BaseEntity {
 
 	@ManyToOne(type => User, user => user.bugs)
 	assignedTo: User;
+
+	@CreateDateColumn()
+	date: string;
 }
