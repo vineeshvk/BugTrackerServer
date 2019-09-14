@@ -3,11 +3,11 @@
 It's is an Apollo Graphql Server created using typescript which uses postgres as it's database.
 and is deployed in heroku using docker container.
 
-## Client
-### Android App
+### Client
+#### Android App
 [Bug tracker Android App](https://github.com/ThalapathySiva/BugTracker) created by [ThalapathySiva](https://github.com/ThalapathySiva)
 
-### Flutter App
+#### Flutter App
 [Bug tracker Flutter App](https://github.com/vineeshvk/BugTrackerFlutter) created by [me](https://github.com/vineeshvk)
 
 ### Features
